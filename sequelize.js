@@ -1,13 +1,13 @@
 const Sequelize = require("sequelize");
-
+require("dotenv").config();
 const sequelize = new Sequelize(
-  "db_sahil",
-  "sahil",
-  "AVNS_wQXoHpfqfFte6xiStpe",
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
   {
-    host: "sahil-sql-intern-project.a.aivencloud.com",
+    host: process.env.DB_HOST,
 
-    port: 24239,
+    port: process.env.DB_PORT,
     dialect: "mysql",
     ssl: {
       require: true,
